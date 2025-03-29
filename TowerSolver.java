@@ -9,9 +9,11 @@ public class TowerSolver {
 
     public void solve(TowerModel model)
     {
-        this.model = model;
-        // Call the missing solve method (not this one)
-    }
+       this.model = model;
+    solve(model.getHeight(), 0, 1, 2); // Start solving from tower 0 to tower 2 using tower 1 as auxiliary
+}
+
+// Overloaded recursive solve method
 
     // Create an overloaded solve(...) method
     // This new method will be recursive (call itself)

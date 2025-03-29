@@ -46,4 +46,8 @@ public class IntegerStack {
     {
         return stack[index];
     }
+
+    public boolean isEmpty() {
+        return depth == 0;
+    }
 }

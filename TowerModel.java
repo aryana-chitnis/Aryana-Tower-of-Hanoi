@@ -45,9 +45,20 @@ public class TowerModel {
 
     // Move one disk from the source stack to the destination stack.
     public void move(int source, int destination)
-    {
-        System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
-        // TODO!!
+    { 
+        if (!towers[source].isEmpty()) {
+            int movingDisk = towers[source].pop();
+            if (towers[destination].isEmpty() || movingDisk < towers[destination].peek()) {
+                towers[destination].push(movingDisk);
+                System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
+        } else {
+            towers[source].push(movingDisk);
+            System.out.println("Invalid move: Cannot place disk " + movingDisk + " on top of " + towers[destination].peek());
+        }
+    } else {
+        System.out.println("Invalid move: Source tower " + source + " is empty.");
+    }
+
     }
 
     // Helper method to nicely print the current model state.
