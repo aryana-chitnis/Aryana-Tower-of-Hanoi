@@ -16,7 +16,11 @@ public class TowerSolver {
     public void solve(int n, int source, int original, int destination) {
         if (n > 0) {
             solve(n - 1, source, destination, original); 
+            model.move(source, destination);
+            solve(n - 1, original, source, destination);
+        }
 
+    }
 // Overloaded recursive solve method
 
     // Create an overloaded solve(...) method
