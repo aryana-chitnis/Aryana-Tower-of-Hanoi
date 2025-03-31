@@ -53,7 +53,7 @@ public class TowerModel {
                 System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
         } else {
             towers[source].push(movingDisk);
-            System.out.println("Invalid move: Cannot place disk " + movingDisk + " on top of " + towers[destination].peek());
+            System.out.println("This is invalid. You can't move " + movingDisk + " on top of " + towers[destination].peek());
         }
     } else {
         System.out.println("Invalid move: Source tower " + source + " is empty.");
